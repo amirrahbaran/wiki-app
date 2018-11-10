@@ -1,0 +1,163 @@
+body {
+	background-color:#FFFFFF;
+}
+
+a:link,a:visited {
+	color: #000000;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #000000;
+	text-decoration: none;
+}
+
+
+ul.tabs {
+	list-style:none;
+}
+
+li.tabs {
+	display: none;
+}
+
+a.t1abs:link,a.tabs:visited {
+	display: none;
+}
+
+a.tabs:hover {
+	display: none;
+}
+
+ul.button {
+	list-style:none;
+}
+
+li.button {
+	display:none;
+}
+
+a.button:link,  a.button:visited, a.button:hover {
+	display: none;
+}
+
+code {
+	display: block;
+	text-indent: 0px;
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border: 1px dashed #000000;
+	color: #303030;
+}
+
+div#page {
+	text-indent: 25px;
+	text-align:right;
+	font-family: tahoma;
+	font-size: 14px;
+	color: #000000;
+	text-align: justify;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+table#image {
+	text-align: justify;
+	font-family: tahoma;
+	font-size: 12px;
+	color: #000000;
+	width: 50px;
+}
+
+div.search {
+	display: none;
+	}
+
+.searchedit {
+	display: none;
+}
+
+textarea {
+	font-family: tahoma;
+	font-size: 12px;
+	width : 92%;
+}
+
+input {
+	font-family: tahoma;
+	font-size: 12px;
+}
+
+select {
+	font-family: tahoma;
+	font-size: 12px;
+	width: 124px;
+}
+
+
+.mybutton {
+	display: none;
+}
+
+h1 {
+	text-align:none;
+	font-family: tahoma;
+	font-size: 15px;
+	color: #000000;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+hr {
+	color: #000000;
+}
+
+li.page {
+	font-size:13px;
+	font-weight: bold;
+	color:000000;
+}
+
+p#edit {
+	text-align:center;
+	font-size:smaller;
+}
+
+p.footer {
+	text-align: center;
+	font-family: tahoma;
+	font-size: 10px;
+	color: #000000;
+}
+
+table#mainbody {
+	border-collapse: collapse;
+	width: 90%;
+}
+
+.bodytop {	
+	background:none;
+	height: 60px;
+}
+
+.bodymiddle {	
+	background:none;
+}
+
+.bodybottom {	
+	background:none;
+	height: 40px;
+}
+
+.dialogtop {	
+	background:none;
+	height: 60px;	
+}
+
+.dialogbottom {	
+	background:none;
+	height: 20px;	
+}
