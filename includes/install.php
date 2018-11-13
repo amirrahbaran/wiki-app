@@ -1,14 +1,11 @@
 <?php
 
 /*
- 	ERFAN WIKI : a wiki with no database based on PrintWiki
+ 	WIKI Application : a wiki with no database based on PrintWiki
  
-    Authors: 
-			Erfan Arabfakhri, Esfahan, Iran, <buttercupgreen@gmail.com>
-			Amir Reza Rahbaran, Esfahan, Iran <amirrezarahbaran@gmail.com>
+    Authors: Amir Reza Rahbaran, Esfahan, Iran <amirrezarahbaran@gmail.com>
  
     Version:  0.1  (your constructive criticism is appreciated, please see our
-    project page on http://sourceforge.net/projects/erfanwiki/
  
    Licence:  GNU General Public License
 
@@ -18,7 +15,7 @@
    GNU General Public License for more details.
  */
 
-if ($masterID != "ERFANWIKI")
+if ($masterID != "WIKIAPP")
 	{
 	die("<big><big><big>ACCESS DENIED !");
 	}
@@ -88,7 +85,7 @@ function install() {
 		<table id=mainbody border=0 cellpadding=0 cellspacing=0>
 			<tr>
 				<td class=bodytop width=100% background=".$templateimagesdir."bodytop.jpg height=60>
-					<br><h1>".$lng['installwikierfan']."</h1>
+					<br><h1>".$lng['installwikiapp']."</h1>
 				</td>
 			</tr>
 			<tr>
@@ -258,7 +255,7 @@ function install() {
 		<table id=mainbody border=0 cellpadding=0 cellspacing=0>
 			<tr>
 				<td class=bodytop width=100% background=".$templateimagesdir."bodytop.jpg height=60>
-					<br><h1>".$lng['installwikierfan']."</h1>
+					<br><h1>".$lng['installwikiapp']."</h1>
 				</td>
 			</tr>
 			<tr>
@@ -440,7 +437,7 @@ function install() {
 				$pwdOk = true;	
 				$test01=$lng['yes'];
 				$userdata = $_POST['username'] . ":" . md5($_POST['password']) . ":-----:" . $_POST['email'] . ":1:1";
-				$datafile = erfanwiki_encode($_POST['username']);
+				$datafile = wikiapp_encode($_POST['username']);
 				$handle = fopen('./data/users/'.$datafile,'w');
 				fwrite($handle,$userdata);
 				fclose($handle);
@@ -479,12 +476,12 @@ function install() {
 				}
 	
 				if ($pagesExists) {
-					$datafile = erfanwiki_encode($_POST['homepage']);
+					$datafile = wikiapp_encode($_POST['homepage']);
 					if (file_exists("./data/pages/$datafile")) {
 						$homepageExists = true;
 						$test03=$lng['yes'];
 					} else {
-						$datafile = erfanwiki_encode($_POST['homepage']);
+						$datafile = wikiapp_encode($_POST['homepage']);
 						if ($homepageHandle = fopen("./data/pages/$datafile",'w')) {
 							$homepageData = $lng['homepagedata'];
 							fwrite($homepageHandle, $homepageData);
@@ -546,7 +543,7 @@ function install() {
 			<table id=mainbody border=0 cellpadding=0 cellspacing=0>
 				<tr>
 					<td class=bodytop width=100% background=".$templateimagesdir."bodytop.jpg height=60>
-						<br><h1>".$lng['installwikierfan']."</h1>
+						<br><h1>".$lng['installwikiapp']."</h1>
 					</td>
 				</tr>
 				<tr>

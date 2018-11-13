@@ -1,14 +1,11 @@
 <?php
 
 /*
- 	ERFAN WIKI : a wiki with no database based on PrintWiki
+ 	WIKI Application : a wiki with no database based on PrintWiki
  
-    Authors: 
-			Erfan Arabfakhri, Esfahan, Iran, <buttercupgreen@gmail.com>
-			Amir Reza Rahbaran, Esfahan, Iran <amirrezarahbaran@gmail.com>
+    Authors: Amir Reza Rahbaran, Esfahan, Iran <amirrezarahbaran@gmail.com>
  
     Version:  0.1  (your constructive criticism is appreciated, please see our
-    project page on http://sourceforge.net/projects/erfanwiki/
  
    Licence:  GNU General Public License
 
@@ -18,19 +15,19 @@
    GNU General Public License for more details.
  */
 
-if ($masterID != "ERFANWIKI")
+if ($masterID != "WIKIAPP")
 	{
 	die("<big><big><big>ACCESS DENIED !");
 	}
 
-function erfanwiki_encode($mystring)
+function wikiapp_encode($mystring)
 	{
 	$mystring = base64_encode($mystring);
 	$mystring = preg_replace("/\//","%x1", $mystring);
 	return $mystring;
 	}
 
-function erfanwiki_decode($mystring)
+function wikiapp_decode($mystring)
 	{
 	$mystring = preg_replace("/%x1/","/", $mystring);
 	$mystring = base64_decode($mystring);
@@ -44,7 +41,7 @@ function doLogin($queryString, $showloginform) {
 	session_start();
 	if ($_SESSION['logged-in'] != TRUE) {
 		if ($_POST['login'] == "Login") {
-			$filename = "./data/users/" . erfanwiki_encode($_POST['uid']);
+			$filename = "./data/users/" . wikiapp_encode($_POST['uid']);
 			if (file_exists($filename) == ture)
 				{
 				$tempinfo = file($filename);
@@ -213,11 +210,11 @@ function smartsearch($keyword, $article) {
 	$searchresult1 = "";
 	foreach ($myresult as $myfiles) 
 	{
-		if (preg_match("/".$keyword."/i", erfanwiki_decode($myfiles)) == true)
+		if (preg_match("/".$keyword."/i", wikiapp_decode($myfiles)) == true)
 		{
 			$isfound = ture;
 			$count = $count + 1;
-			$searchresult1 = $searchresult1  . "<li style='list-style:none'>$count _ <a href='".$_SERVER['PHP_SELF']."?title=".erfanwiki_decode($myfiles)."'>".erfanwiki_decode($myfiles)."</a></li>";
+			$searchresult1 = $searchresult1  . "<li style='list-style:none'>$count _ <a href='".$_SERVER['PHP_SELF']."?title=".wikiapp_decode($myfiles)."'>".wikiapp_decode($myfiles)."</a></li>";
 			if ($count >= 20) break;
 		}
 	}
@@ -243,7 +240,7 @@ function smartsearch($keyword, $article) {
 		{
 			$isfound = ture;
 			$count = $count + 1;
-			$searchresult2 = $searchresult2  . "<li style='list-style:none'>$count _ <a href='".$_SERVER['PHP_SELF']."?highlight=".$keyword."&title=".erfanwiki_decode($myfiles)."'>".erfanwiki_decode($myfiles)."</a></li>";
+			$searchresult2 = $searchresult2  . "<li style='list-style:none'>$count _ <a href='".$_SERVER['PHP_SELF']."?highlight=".$keyword."&title=".wikiapp_decode($myfiles)."'>".wikiapp_decode($myfiles)."</a></li>";
 			if ($count >= 20) break;
 		}
 	}
@@ -347,7 +344,7 @@ function editPage($title) {
 	
 	if ($_SESSION['logged-in']) {
 	  	if ($_POST['save']) {
-			$datafile = erfanwiki_encode($title);
+			$datafile = wikiapp_encode($title);
 			$handle = fopen("./data/pages/$datafile",'w');
 			fwrite($handle, stripslashes($_POST['page']));
 			fclose($handle);
@@ -367,7 +364,7 @@ function editPage($title) {
 			</p>",
 			$lng['messagecaption']);
 	  	} else {
-			$datafile =  erfanwiki_encode($title);		
+			$datafile =  wikiapp_encode($title);		
 			if (!$page = @file_get_contents("./data/pages/".$datafile)) {
 				$page = $lng['newpagetext'];
 			}
@@ -777,7 +774,7 @@ function displayPage($title,$highlight) {
 	
 	$articleedit = "<a class=tabs href='".$_SERVER['PHP_SELF']."?edit=$title'>".$lng['edit']."</a>";
 	
-	$datafile =  erfanwiki_encode($title);
+	$datafile =  wikiapp_encode($title);
 	if (!$page = @file_get_contents("./data/pages/".$datafile)) {
 	putMessage("".
 	"

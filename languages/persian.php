@@ -1,7 +1,7 @@
 <?php
 	//---
 	$lng['langname']="Persian";
-	$lng['createdby']="Erfan Arabfakhri";	
+	$lng['createdby']="Amir Reza Rahbaran";	
 	$lng['direction']="rtl";	
 	//---
 	$lng['invalidpassword']="کد کاربري يا کلمه عبور شما اشتباه است.";
@@ -71,7 +71,7 @@
 	$lng['install']="نصب";
 	$lng['reinstall']="نصب مجدد";
 	$lng['configerror']="فايل پيکربندي ويکي خراب شده است ، آيا مايليد ويکي را مجددا نصب کنيد ؟";
-	$lng['installwikierfan']="نصب ويکي عرفان";
+	$lng['installwikiapp']="نصب ويکي عرفان";
 	$lng['sg1nodatadir']="لطفا شاخه اي با نام data در مسير جاري ايجاد کنيد.<br>";
 	$lng['sg2datachmode']="لطفا شاخه data را به حالت 777 chmode کنيد.<br>";
 	$lng['sg3reinstallwiki']="به نظر مي رسد شما در حال نصب مجدد ويکي عرفان هستيد.<br>";
@@ -93,7 +93,7 @@
 	$lng['email']="پست الکترونيک";
 	$lng['return']="بازگشت";
 	$lng['installfromstart']="لطفا مراحل نصب را از ابتدا شروع کنيد.";
-	$lng['homepagedata']="[image:logo.jpg|ERFAN WIKI Logo]\nبه ويکي عرفان خوش آمديد.";
+	$lng['homepagedata']="[image:logo.jpg|WIKI APP Logo]\nبه ويکي عرفان خوش آمديد.";
 	$lng['sg1invalidpassword']="کلمه عبور مديريت و تکرار آن با هم مطابقت نمي کنند.<br>";
 	$lng['sg2writeconfigerror']="اشکال در ايجاد فايل پيکربندي ويکي عرفان، لطفا سرور را بررسي کنيد.<br>";
 	$lng['sg3writehomepageerror']="اشکال در ايجاد فايل صفحه اصلي ( خانه )، لطفا سرور را بررسي کنيد.<br>";

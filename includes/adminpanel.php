@@ -1,14 +1,11 @@
 <?php
 
 /*
- 	ERFAN WIKI : a wiki with no database based on PrintWiki
+ 	WIKI Application : a wiki with no database based on PrintWiki
  
-    Authors: 
-			Erfan Arabfakhri, Esfahan, Iran, <buttercupgreen@gmail.com>
-			Amir Reza Rahbaran, Esfahan, Iran <amirrezarahbaran@gmail.com>
+    Authors: Amir Reza Rahbaran, Esfahan, Iran <amirrezarahbaran@gmail.com>
  
     Version:  0.1  (your constructive criticism is appreciated, please see our
-    project page on http://sourceforge.net/projects/erfanwiki/
  
    Licence:  GNU General Public License
 
@@ -18,7 +15,7 @@
    GNU General Public License for more details.
  */
 
-if ($masterID != "ERFANWIKI")
+if ($masterID != "WIKIAPP")
 	{
 	die("<big><big><big>ACCESS DENIED !");
 	}
@@ -421,7 +418,7 @@ function adminpanel($page,$article) {
 					$lng['messagecaption']);
 					die();
 					}
-				if (file_exists('./data/users/' . erfanwiki_encode($_POST['username'])) == ture)
+				if (file_exists('./data/users/' . wikiapp_encode($_POST['username'])) == ture)
 					{
 					$isfound = true;
 					putMessage("".
@@ -442,7 +439,7 @@ function adminpanel($page,$article) {
 					die();
 					} else {
 						$userdata = $_POST['username'] . ":" . md5($_POST['password']) . ":" . $_POST['realname'] . ":" . $_POST['email'] . ":" . $_POST['usertype'] . ":" . $_POST['active'];
-						$datafile = erfanwiki_encode($_POST['username']);
+						$datafile = wikiapp_encode($_POST['username']);
 						$handle = fopen('./data/users/'.$datafile,'w');
 						fwrite($handle,$userdata);
 						fclose($handle);
@@ -487,7 +484,7 @@ function adminpanel($page,$article) {
 					$lng['messagecaption']);
 					die();
 					}
-				$filename = "./data/users/" . erfanwiki_encode($_GET['username']);
+				$filename = "./data/users/" . wikiapp_encode($_GET['username']);
 				if (file_exists($filename) == ture)
 					{
 					$tempinfo = file($filename);
@@ -508,7 +505,7 @@ function adminpanel($page,$article) {
 						} else { $message = $lng['usereditedself'];	}
 					
 					$userdata = $userinfo[0] . ":" . $userinfo[1] . ":" . $userinfo[2] . ":" . $userinfo[3] . ":" . $userinfo[4] . ":" . $userinfo[5];
-					$datafile = erfanwiki_encode($_GET['username']);
+					$datafile = wikiapp_encode($_GET['username']);
 					$handle = fopen('./data/users/'.$datafile,'w');
 					fwrite($handle,$userdata);
 					fclose($handle);							
@@ -577,7 +574,7 @@ function adminpanel($page,$article) {
 					$lng['messagecaption']);
 					die();
 					} else {
-						$filename = "./data/users/" . erfanwiki_encode($_GET['username']);
+						$filename = "./data/users/" . wikiapp_encode($_GET['username']);
 						if (file_exists($filename) == ture)
 							{
 							unlink($filename);
@@ -592,7 +589,7 @@ function adminpanel($page,$article) {
 				{
 				if (!is_dir($file))
 					{
-					if (preg_match('/^' . $_GET['show'] . '(.*?)/i',erfanwiki_decode($file)) == true)
+					if (preg_match('/^' . $_GET['show'] . '(.*?)/i',wikiapp_decode($file)) == true)
 						{
 						$maxusr++;
 						$tempinfo = file('./data/users/'.$file);
@@ -789,7 +786,7 @@ function adminpanel($page,$article) {
 				
 			if ($_GET['showedituserform'] != '')
 				{
-				$tempinfo = file('./data/users/'.erfanwiki_encode($_GET['username']));
+				$tempinfo = file('./data/users/'.wikiapp_encode($_GET['username']));
 				$tempinfo = implode('',$tempinfo);	
 				$userinfo = explode(':',$tempinfo);
 				if ($userinfo[4] == 1)

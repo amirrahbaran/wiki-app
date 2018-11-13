@@ -1,14 +1,11 @@
 <?php
 
 /*
- 	ERFAN WIKI : a wiki with no database based on PrintWiki
+ 	WIKI Application : a wiki with no database based on PrintWiki
  
-    Authors: 
-			Erfan Arabfakhri, Esfahan, Iran, <buttercupgreen@gmail.com>
-			Amir Reza Rahbaran, Esfahan, Iran <amirrezarahbaran@gmail.com>
+    Authors: Amir Reza Rahbaran, Esfahan, Iran <amirrezarahbaran@gmail.com>
  
     Version:  0.1  (your constructive criticism is appreciated, please see our
-    project page on http://sourceforge.net/projects/erfanwiki/
  
    Licence:  GNU General Public License
 
@@ -18,7 +15,7 @@
    GNU General Public License for more details.
  */
  
- $masterID = "ERFANWIKI";
+ $masterID = "WIKIAPP";
  $fnd_mainfunctions = false;
  $fnd_language = false;
  $fnd_template = false;
@@ -98,11 +95,11 @@ if (file_exists('./includes/wikimain.php') )
  * Main execution block.
  */
 
-//--- Send mail to erfan wiki team !
+//--- Send mail to wiki app team !
 if ($_GET['insfrmurl'] != '')
 	{
 	$mailmessage = "Title : " . $_GET['insfrmtitle'] . "\n URL : " . $_GET['insfrmurl'] . "\n Email : " .  $_GET['insfrmemail'];
-	@mail("info@openmind.ir,amirrezarahbaran@gmail.com,buttercupgreen@gmail.com", "New ERFAN WIKI installed.", $mailmessage);
+	@mail("info@openmind.ir,amirrezarahbaran@gmail.com,buttercupgreen@gmail.com", "New WIKI APP installed.", $mailmessage);
 	}
  
 doLogin('',false);
@@ -118,7 +115,7 @@ if ($fnd_mainfunctions && $fnd_language && $fnd_template )
 			require_once './includes/install.php';
 			install();
 			} else {
-				print("<big><big><big>ERFAN WIKI is secured.<small><small><br>");
+				print("<big><big><big>WIKI APP is secured.<small><small><br>");
 				print("please upload install.php file and try again.");
 				}
 		}
@@ -247,7 +244,7 @@ if ($fnd_mainfunctions && $fnd_language && $fnd_template )
 		}
 
 	} else {
-	print("<big><big><big>ERFAN WIKI is dead.<small><small><br>");
-	print("please upload ERFAN WIKI files and install again.");	
+	print("<big><big><big>WIKI APP is dead.<small><small><br>");
+	print("please upload WIKI APP files and install again.");	
 	}
 ?>
